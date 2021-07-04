@@ -12,7 +12,7 @@ hbs.registerPartials(__dirname + '/views/partials', function (err) {});
 //Servir contenido estatico.
 app.use(express.static('public', { extensions: ['html'] }));
 
-app.get('/', (req, res) => {
+/* app.get('/', (req, res) => {
     res.render('home',{
         nombre: 'Jesús Zúñiga',
         titulo: 'Curso de NodeJs 2021'
@@ -39,10 +39,10 @@ app.get('/form', (req, res) => {
 
 app.get('/clientes', (req, res) => {
     res.send('Catálogo de clientes');
-});
+}); */
 
 app.get('*', (req, res) => {
-    res.sendFile(__dirname + '/public/404.html');
+    res.sendFile(__dirname + '/public/index.html');
 });
 
 app.listen(port, () => {
